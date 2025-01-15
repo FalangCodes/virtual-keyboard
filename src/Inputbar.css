@@ -1,0 +1,44 @@
+.input-bar {
+    width: 70%; 
+    max-width: 850px; 
+    height: 100px; 
+    font-size: 18px; 
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc; 
+    padding: 15px; 
+    background-color: whitesmoke; 
+    color: #333; 
+    resize: none; 
+    outline: none; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .Inputbar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 31vh; /* Ensures it takes at least the full height of the viewport */
+  }
+  
+  
+  .input-bar:focus {
+    border-color: #61dafb; /* Border color on focus */
+    background-color: #fff; /* Change background on focus */
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.2); /* Focus shadow */
+  }
+  
+  .input-bar::placeholder {
+    color: #aaa; 
+    font-style: italic; 
+  }
+  
+  .input-bar:focus::placeholder {
+    color: transparent; 
+  }
+  
