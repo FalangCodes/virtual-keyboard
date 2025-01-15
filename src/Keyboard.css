@@ -84,47 +84,31 @@ body {
   width: 300px;
 }
 
-.arrow-container {
-  display: grid;
-  grid-template-areas:
-    "left up right"
-    "left down right";
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-  margin-left: 11px;
-  margin-bottom: 2px;
-}
-
-.arrow-left {
-  grid-area: left;
-}
-
-.arrow-up-down {
-  display: flex;
-  flex-direction: column;
-  grid-area: up / down; /* Center stack for up and down arrows */
-  align-items: center;
-  gap: 19px;
-}
-
-.arrow-up {
-  grid-area: up;
-}
-
-.arrow-down {
-  grid-area: down;
-}
-
-.arrow-right {
-  grid-area: right;
-}
-
-
-
-
 .key.windows {
   font-size: 18px;
+}
+
+.arrow-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.arrow-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-left, .arrow-right {
+  width: 45px; /* Adjust width as needed */
+  height: 50px; /* Adjust height as needed */
+}
+
+.arrow-up, .arrow-down {
+  width: 70px; /* Adjust width as needed */
+  height: 25px; /* Adjust height as needed */
 }
 
 .key.backspace{
@@ -156,7 +140,7 @@ body {
 }
 
 .key.space {
-  width: 330px; /* Adjusted for larger space key */
+  width: 345px; /* Adjusted for larger space key */
 }
 
 /* Large devices */

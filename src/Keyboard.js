@@ -71,31 +71,10 @@ const keys = [
     { label: "Alt", className: "alt" },
     { label: "Space", className: "space" },
     { label: "Alt", className: "alt" },
-    { label: "Ctrl", className: "ctrl" },
-    {
-      className: "arrow-container",
-      content: (
-        <div className="key arrow-container">
-          <div className="arrow arrow-left">
-            <FaChevronLeft />
-          </div>
-          <div className="arrow-up-down">
-            <div className="arrow arrow-up">
-              <FaChevronUp />
-            </div>
-            <div className="arrow arrow-down">
-              <FaChevronDown />
-            </div>
-          </div>
-          <div className="arrow arrow-right">
-            <FaChevronRight />
-          </div>
-        </div>
-      ),
-    },
+    { label: "Ctrl", className: "ctrl" }
   ]
-  
 ];
+
 
 function Keyboard({ onButtonClick, isCapsLockOn }) {
   const handleKeyClick = (key) => {
@@ -106,37 +85,40 @@ function Keyboard({ onButtonClick, isCapsLockOn }) {
 
   return (
     <div className="keyboard">
-      {keys.map((row, rowIndex) => (
+      {keys.slice(0, 4).map((row, rowIndex) => (
         <div key={rowIndex} className="row">
-          {row.map((key, keyIndex) =>
-            key.content ? (
-              // Render a custom key structure for the arrows
-              <div key={keyIndex} className={`key ${key.className}`}>
-                {key.content}
-              </div>
-            ) : (
-              // Render standard keys as buttons
-              <button
-                key={keyIndex}
-                className={`key ${key.className} ${
-                  key.label === "Caps Lock" && isCapsLockOn ? "active" : ""
-                }`}
-                onClick={() => handleKeyClick(key.label)}
-              >
-                {key.icon || (
-                  <>
-                    <span className="main-char">{key.label}</span>
-                    {key.alt && <span className="alt-char">{key.alt}</span>}
-                  </>
-                )}
-              </button>
-            )
-          )}
+          {row.map((key, keyIndex) => (
+            <button
+              key={keyIndex}
+              className={`key ${key.className}`}
+              onClick={() => handleKeyClick(key.label)}
+            >
+              {key.icon || <span>{key.label}</span>}
+            </button>
+          ))}
         </div>
       ))}
+      <div className="row">
+        {keys[4].map((key, keyIndex) => (
+          <button
+            key={keyIndex}
+            className={`key ${key.className}`}
+            onClick={() => handleKeyClick(key.label)}
+          >
+            {key.icon || <span>{key.label}</span>}
+          </button>
+        ))}
+        <div className="arrow-container">
+          <button className="arrow-left"><FaChevronLeft /></button>
+          <div className="arrow-vertical">
+            <button className="arrow-up"><FaChevronUp /></button>
+            <button className="arrow-down"><FaChevronDown /></button>
+          </div>
+          <button className="arrow-right"><FaChevronRight /></button>
+        </div>
+      </div>
     </div>
   );
-  
 }
 
 export default Keyboard;
