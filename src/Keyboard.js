@@ -93,7 +93,12 @@ function Keyboard({ onButtonClick, isCapsLockOn }) {
               className={`key ${key.className}`}
               onClick={() => handleKeyClick(key.label)}
             >
-              {key.icon || <span>{key.label}</span>}
+              {key.icon || (
+                <div className="key-content">
+                  <span className="primary">{key.label}</span>
+                  {key.alt && <span className="secondary">{key.alt}</span>}
+                </div>
+              )}
             </button>
           ))}
         </div>
@@ -105,20 +110,34 @@ function Keyboard({ onButtonClick, isCapsLockOn }) {
             className={`key ${key.className}`}
             onClick={() => handleKeyClick(key.label)}
           >
-            {key.icon || <span>{key.label}</span>}
+            {key.icon || (
+              <div className="key-content">
+                <span className="primary">{key.label}</span>
+                {key.alt && <span className="secondary">{key.alt}</span>}
+              </div>
+            )}
           </button>
         ))}
         <div className="arrow-container">
-          <button className="arrow-left"><FaChevronLeft /></button>
+          <button className="arrow-left">
+            <FaChevronLeft />
+          </button>
           <div className="arrow-vertical">
-            <button className="arrow-up"><FaChevronUp /></button>
-            <button className="arrow-down"><FaChevronDown /></button>
+            <button className="arrow-up">
+              <FaChevronUp />
+            </button>
+            <button className="arrow-down">
+              <FaChevronDown />
+            </button>
           </div>
-          <button className="arrow-right"><FaChevronRight /></button>
+          <button className="arrow-right">
+            <FaChevronRight />
+          </button>
         </div>
       </div>
     </div>
   );
+  
 }
 
 export default Keyboard;
