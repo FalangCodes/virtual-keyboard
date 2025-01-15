@@ -146,26 +146,38 @@ body {
 /* Large devices */
 @media (max-width: 1200px) {
   .keyboard {
-    max-width: 700px;
+    max-width: 75%;
   }
 
   .key {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     font-size: 12px;
   }
 
   .key.space {
-    width: 250px;
+    width: 243px;
+  }
+
+  .arrow-up, .arrow-down {
+    width: 55px;
+    height: 25px;
+  }
+
+  .arrow-left, .arrow-right {
+    width: 30px;
+    height: 55px;
   }
 
   .key.backspace,
-  .key.enter,
-  .key.shift,
   .key.tab,
-  .key.caps-lock {
-    width: 75px;
-    font-size: 12px;
+  .key.caps-lock,
+  .key.enter {
+    width: 80px;
+  }
+
+  .key.shift {
+    width: 100px;
   }
 }
 
@@ -176,8 +188,8 @@ body {
   }
 
   .key {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     font-size: 11px;
   }
 
@@ -185,13 +197,21 @@ body {
     width: 200px;
   }
 
+  .arrow-up, .arrow-down,
+  .arrow-left, .arrow-right {
+    width: 40px;
+    height: 40px;
+  }
+
   .key.backspace,
-  .key.enter,
-  .key.shift,
   .key.tab,
-  .key.caps-lock {
+  .key.caps-lock,
+  .key.enter {
     width: 70px;
-    font-size: 11px;
+  }
+
+  .key.shift {
+    width: 90px;
   }
 }
 
@@ -200,6 +220,11 @@ body {
   .keyboard {
     max-width: 100%;
     display: block;
+    padding: 5px;
+  }
+
+  .row {
+    gap: 3px;
   }
 
   .key {
@@ -209,24 +234,35 @@ body {
   }
 
   .key.space {
-    width: 80px;
+    width: 180px;
+  }
+
+  .arrow-up, .arrow-down,
+  .arrow-left, .arrow-right {
+    width: 35px;
+    height: 35px;
   }
 
   .key.backspace,
-  .key.enter,
-  .key.shift,
   .key.tab,
-  .key.caps-lock {
+  .key.caps-lock,
+  .key.enter {
     width: 60px;
-    font-size: 10px;
+  }
+
+  .key.shift {
+    width: 85px;
   }
 }
 
 /* Very small devices (portrait mobile) */
 @media (max-width: 480px) {
   .keyboard {
-    max-width: 100%;
     padding: 10px;
+  }
+
+  .row {
+    gap: 2px;
   }
 
   .key {
@@ -239,21 +275,21 @@ body {
     width: 150px;
   }
 
-  .key.backspace{
-    width: 550px;
-    font-size: 9px;
+  .arrow-up, .arrow-down,
+  .arrow-left, .arrow-right {
+    width: 30px;
+    height: 30px;
   }
 
-  .key.tab, 
-  .key.arrow-left, 
-  .key.windows, 
-  .key.caps-lock, 
-  .key.arrow, 
-  .key.alt,
-  .key.fn,
-  .key.ctrl,
-  .key.key.shift{
-    display: none;
+  .key.backspace,
+  .key.tab,
+  .key.caps-lock,
+  .key.enter {
+    width: 50px;
+  }
+
+  .key.shift {
+    width: 75px;
   }
 }
 
@@ -261,6 +297,10 @@ body {
 @media (max-width: 375px) {
   .keyboard {
     padding: 5px;
+  }
+
+  .row {
+    gap: 1px;
   }
 
   .key {
@@ -273,21 +313,20 @@ body {
     width: 120px;
   }
 
-  
-  .key.enter,
-  .key.shift,
-  .key.caps-lock {
-    width: 50px;
-    font-size: 8px;
+  .arrow-up, .arrow-down,
+  .arrow-left, .arrow-right {
+    width: 25px;
+    height: 25px;
   }
 
-  .key.caps-lock{
-    display: none;
+  .key.backspace,
+  .key.tab,
+  .key.caps-lock,
+  .key.enter {
+    width: 45px;
   }
 
-  .key.backspace{
-    width: 30px;
+  .key.shift {
+    width: 70px;
   }
 }
-
-
