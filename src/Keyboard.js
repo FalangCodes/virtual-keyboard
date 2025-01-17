@@ -71,12 +71,29 @@ const keys = [
     { label: "Alt", className: "alt" },
     { label: "Space", className: "space" },
     { label: "Alt", className: "alt" },
-    { label: "Ctrl", className: "ctrl" }
-  ]
+    { label: "Ctrl", className: "ctrl" },
+    { label: "", className: "arrow-container", icon: (
+      <>
+        <button className="arrow-left">
+          <FaChevronLeft />
+        </button>
+        <div className="arrow-vertical">
+          <button className="arrow-up">
+            <FaChevronUp />
+          </button>
+          <button className="arrow-down">
+            <FaChevronDown />
+          </button>
+        </div>
+        <button className="arrow-right">
+          <FaChevronRight />
+        </button>
+      </>
+    ) },
+  ],
 ];
 
-
-function Keyboard({ onButtonClick, isCapsLockOn }) {
+function Keyboard({ onButtonClick }) {
   const handleKeyClick = (key) => {
     if (onButtonClick) {
       onButtonClick(key);
@@ -91,7 +108,7 @@ function Keyboard({ onButtonClick, isCapsLockOn }) {
             <button
               key={keyIndex}
               className={`key ${key.className}`}
-              onClick={() => handleKeyClick(key.label)}
+              onClick={() => handleKeyClick(key)}
             >
               {key.icon || (
                 <div className="key-content">
@@ -108,7 +125,7 @@ function Keyboard({ onButtonClick, isCapsLockOn }) {
           <button
             key={keyIndex}
             className={`key ${key.className}`}
-            onClick={() => handleKeyClick(key.label)}
+            onClick={() => handleKeyClick(key)}
           >
             {key.icon || (
               <div className="key-content">
@@ -118,26 +135,9 @@ function Keyboard({ onButtonClick, isCapsLockOn }) {
             )}
           </button>
         ))}
-        <div className="arrow-container">
-          <button className="arrow-left">
-            <FaChevronLeft />
-          </button>
-          <div className="arrow-vertical">
-            <button className="arrow-up">
-              <FaChevronUp />
-            </button>
-            <button className="arrow-down">
-              <FaChevronDown />
-            </button>
-          </div>
-          <button className="arrow-right">
-            <FaChevronRight />
-          </button>
-        </div>
       </div>
     </div>
   );
-  
 }
 
 export default Keyboard;
